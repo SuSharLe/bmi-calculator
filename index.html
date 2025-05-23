@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI Calculator</title>
+    <link rel="shortcut icon" href="images/10476452.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -57,295 +58,311 @@
     </style>
   </head>
 
-  <body>
-    <h1><center>Body Mass Index Calculator</center></h1>
-    <div class="row">
-      <div class="col-12 col-md-6 mb-3">
-        <div class="card">
-          <h4 class="card-header" style="text-align: center">
-            <div class="radio-group">
-              <input
-                type="radio"
-                id="form1-radio"
-                name="form-selector"
-                value="form1"
-                checked
-              />
-              <label for="form1-radio">US Units</label>
-              <input
-                type="radio"
-                id="form2-radio"
-                name="form-selector"
-                value="form2"
-              />
-              <label for="form2-radio">Metric Units</label>
-            </div>
-          </h4>
-          <div class="card-body">
-            <div id="us-unit">
-              <form>
-                <div class="row align-items-center" id="for-age">
-                  <div class="col-auto">
-                    <label class="col-form-label">Age: </label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="number" class="form-control" />
-                  </div>
-                </div>
-                <div class="row align-items-center" id="for-gender">
-                  <div class="col-auto">
-                    <label>Gender: </label>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gender"
-                        checked
-                      />Male
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1">
+      <h1><center>Body Mass Index Calculator</center></h1>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card">
+            <h4 class="card-header" style="text-align: center">
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="form1-radio"
+                  name="form-selector"
+                  value="form1"
+                  checked
+                />
+                <label for="form1-radio">US Units</label>
+                <input
+                  type="radio"
+                  id="form2-radio"
+                  name="form-selector"
+                  value="form2"
+                />
+                <label for="form2-radio">Metric Units</label>
+              </div>
+            </h4>
+            <div class="card-body">
+              <div id="us-unit">
+                <form>
+                  <div class="row align-items-center" id="for-age">
+                    <div class="col-auto">
+                      <label class="col-form-label">Age: </label>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gender"
-                      />Female
+                    <div class="col-auto">
+                      <input type="number" class="form-control" />
                     </div>
                   </div>
-                </div>
+                  <div class="row align-items-center" id="for-gender">
+                    <div class="col-auto">
+                      <label>Gender: </label>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gender"
+                          checked
+                        />Male
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gender"
+                        />Female
+                      </div>
+                    </div>
+                  </div>
 
-                <div class="row align-items-center" id="for-height">
-                  <div class="col-auto">
-                    <label class="col-form-label">Height: </label>
-                  </div>
-                  <div class="col-auto">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="feet"
-                    />
-                  </div>
-                  <div class="col-auto">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="inches"
-                    />
-                  </div>
-                </div>
-                <div class="row align-items-center" id="for-weight">
-                  <div class="col-auto">
-                    <label class="col-form-label">Weight: </label>
-                  </div>
-                  <div class="col-auto">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="pounds"
-                    />
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  class="btn btn-secondary m-2"
-                  style="text-align: center; font-family: Nuntio, sans-serif"
-                  onclick="calculateUS();"
-                >
-                  Calculate
-                </button>
-              </form>
-            </div>
-            <div id="metric-unit">
-              <form>
-                <div class="row align-items-center" id="for-age">
-                  <div class="col-auto">
-                    <label class="col-form-label">Age: </label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="number" class="form-control" />
-                  </div>
-                </div>
-                <div class="row align-items-center" id="for-gender">
-                  <div class="col-auto">
-                    <label>Gender: </label>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gender"
-                        checked
-                      />Male
+                  <div class="row align-items-center" id="for-height">
+                    <div class="col-auto">
+                      <label class="col-form-label">Height: </label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="col-auto">
                       <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gender"
-                      />Female
+                        type="number"
+                        class="form-control"
+                        placeholder="feet"
+                      />
+                    </div>
+                    <div class="col-auto">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="inches"
+                      />
                     </div>
                   </div>
-                </div>
+                  <div class="row align-items-center" id="for-weight">
+                    <div class="col-auto">
+                      <label class="col-form-label">Weight: </label>
+                    </div>
+                    <div class="col-auto">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="pounds"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-secondary m-2"
+                    style="text-align: center; font-family: Nuntio, sans-serif"
+                    onclick="calculateUS();"
+                  >
+                    Calculate
+                  </button>
+                </form>
+              </div>
+              <div id="metric-unit">
+                <form>
+                  <div class="row align-items-center" id="for-age">
+                    <div class="col-auto">
+                      <label class="col-form-label">Age: </label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="number" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="row align-items-center" id="for-gender">
+                    <div class="col-auto">
+                      <label>Gender: </label>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gender"
+                          checked
+                        />Male
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gender"
+                        />Female
+                      </div>
+                    </div>
+                  </div>
 
-                <div class="row align-items-center" id="for-height">
-                  <div class="col-auto">
-                    <label class="col-form-label">Height: </label>
+                  <div class="row align-items-center" id="for-height">
+                    <div class="col-auto">
+                      <label class="col-form-label">Height: </label>
+                    </div>
+                    <div class="col-auto">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="meters"
+                      />
+                    </div>
                   </div>
-                  <div class="col-auto">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="meters"
-                    />
+                  <div class="row align-items-center" id="for-weight">
+                    <div class="col-auto">
+                      <label class="col-form-label">Weight: </label>
+                    </div>
+                    <div class="col-auto">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="kilograms"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-secondary m-2"
+                    style="text-align: center; font-family: Nuntio, sans-serif"
+                    onclick="calculateMetric();"
+                  >
+                    Calculate
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mb-3" id="faq">
+          <div class="card text-center">
+            <div class="card-header"><h4>Frenquently Asked Questions</h4></div>
+            <div class="card-body">
+              <div class="accordion accordion-flush" id="questions">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      What is BMI?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <b
+                        >BMI (Body Mass Index) is a number that estimates body
+                        fat based on your weight and height.</b
+                      >
+                    </div>
                   </div>
                 </div>
-                <div class="row align-items-center" id="for-weight">
-                  <div class="col-auto">
-                    <label class="col-form-label">Weight: </label>
-                  </div>
-                  <div class="col-auto">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="kilograms"
-                    />
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      What is a healthy BMI range?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <b
+                        >A BMI between 18.5 and 24.9 is considered healthy for
+                        most adults.</b
+                      >
+                    </div>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  class="btn btn-secondary m-2"
-                  style="text-align: center; font-family: Nuntio, sans-serif"
-                  onclick="calculateUS();"
-                >
-                  Calculate
-                </button>
-              </form>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      How often should I check my BMI?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <b
+                        >You can check it every few months or during health
+                        checkups.</b
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-body-secondary">
+              Updated 4 days ago
             </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 mb-3" id="faq">
-        <div class="card text-center">
-          <div class="card-header"><h4>Frenquently Asked Questions</h4></div>
-          <div class="card-body">
-            <div class="accordion accordion-flush" id="questions">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseOne"
-                  >
-                    What is BMI?
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseOne"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <b
-                      >BMI (Body Mass Index) is a number that estimates body fat
-                      based on your weight and height.</b
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseTwo"
-                  >
-                    What is a healthy BMI range?
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseTwo"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <b
-                      >A BMI between 18.5 and 24.9 is considered healthy for
-                      most adults.</b
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseThree"
-                  >
-                    How often should I check my BMI?
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseThree"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <b
-                      >You can check it every few months or during health
-                      checkups.</b
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-12 col-md-6 mt-3 mb-5 left"
+            style="font-size: 40px; text-align: center"
+          >
+            Result: <span id="result">0</span>
           </div>
-          <div class="card-footer text-body-secondary">Updated 4 days ago</div>
+          <div class="col-12 col-md-6 right">
+            <h1 class="text-center">What the colors mean</h1>
+            <ul>
+              <li>
+                <span style="color: blue">Blue</span> means you are
+                <strong style="color: blue">"Underweight"</strong> and the risk
+                level is "high".
+              </li>
+              <li>
+                <span style="color: green">Green</span> means you are
+                <strong style="color: green">"Normal Weight"</strong> and the
+                risk level is "low".
+              </li>
+              <li>
+                <span style="color: orange">Orange</span> means you are
+                <strong style="color: orange">"Overweight"</strong> and the risk
+                level is "medium".
+              </li>
+              <li>
+                <span style="color: red">Red</span> means you are
+                <strong style="color: red">"Obese"</strong> and the risk level
+                is "high".
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="container">
-      <div class="result">
-        <label style="font-size: 40px; margin: 20px"
-          >Result: <span id="result">0</span></label
-        >
+    <footer
+      class="text-center text-muted border-top py-3"
+      style="background-color: rgb(55, 82, 63)"
+    >
+      <div>
+        <p class="mb-0" style="color: rgb(184, 255, 184)">
+          &copy; 2025 BMI Calculator. All rights reserved.
+        </p>
       </div>
-      <div class="explanation">
-        <h1>What the colors mean</h1>
-        <ul>
-          <li>
-            <span style="color: blue">Blue</span> means you are
-            <b><span style="color: blue">"Underweight"</span></b> and the risk
-            level is "high".
-          </li>
-          <li>
-            <span style="color: green">Green</span> means you are
-            <b><span style="color: green">"Normal Weight"</span></b> and the
-            risk level is "low".
-          </li>
-          <li>
-            <span style="color: Orange">Orange</span> means you are
-            <b><span style="color: Orange">"Overweight"</span></b> and the risk
-            level is "medium".
-          </li>
-          <li>
-            <span style="color: red">Red</span> means you are
-            <b><span style="color: red">"Obese"</span></b> and the risk level is
-            "high".
-          </li>
-        </ul>
-
-        .
-      </div>
-    </div>
+    </footer>
 
     <script>
       const form1 = document.getElementById("form1-radio");
@@ -394,6 +411,7 @@
         } else if (bmi1 >= 25 && bmi1 < 30) {
           resultSpan.style.color = "orange";
         } else {
+          56;
           resultSpan.style.color = "red";
         }
       }
